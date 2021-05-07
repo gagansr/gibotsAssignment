@@ -48,8 +48,7 @@ router.get('/total-marks',(req,res) => {
 
 router.get('/sort-data',(req, res) => {
     User.find({}).then(function (users) {
-            let sortData = [4,6,3,5,1,9];
-           
+            //looping for sort the data based on age
             for(let i = 0; i < users.length; i++) {
                 for(let j = 0; j < users.length-1; j++) {
                     let temp = {};
