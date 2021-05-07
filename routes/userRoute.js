@@ -20,6 +20,7 @@ router.post('/add-user',(req, res) => {
    })
     
 })
+
 //get all users
 router.get('/',(req, res) => {
     User.find({}).then(function (users) {
@@ -48,8 +49,7 @@ router.get('/total-marks',(req,res) => {
 router.get('/sort-data',(req, res) => {
     User.find({}).then(function (users) {
             let sortData = [4,6,3,5,1,9];
-            // let min = users[0].age;
-            //let temp = 0;
+           
             for(let i = 0; i < users.length; i++) {
                 for(let j = 0; j < users.length-1; j++) {
                     let temp = {};
@@ -60,7 +60,7 @@ router.get('/sort-data',(req, res) => {
                     }
                 }
             }
-            res.json(users);
+            res.status(200).json(users);
 
         });
 })
